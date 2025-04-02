@@ -1,0 +1,33 @@
+/* General styles */
+body {
+    margin: 100px;
+    padding: 0;
+    display: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #add8e6; /* Baby blue */
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    background-color: #007BFF; /* Cool blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
