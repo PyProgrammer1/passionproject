@@ -84,36 +84,46 @@ function tryCode() {
 
 function key1() {
     codeEntered += "1";
+    checkCode();
 }
 function key2() {
     codeEntered += "2";
+    checkCode();
 }
 function key3() {
     codeEntered += "3";
+    checkCode();
 }
 function key4() {
     codeEntered += "4";
+    checkCode();
 }
 function key5() {
     codeEntered += "5";
+    checkCode();
 }
 function key6() {
     codeEntered += "6";
+    checkCode();
 }
 function key7() {
     codeEntered += "7";
+    checkCode();
 }
 function key8() {
     codeEntered += "8";
+    checkCode();
 }
 function key9() {
     codeEntered += "9";
+    checkCode();
 }
 function key0() {
     codeEntered += "0";
+    checkCode();
 }
 function checkCode() {
-    if (codeEntered === code) {
+    if (codeEntered === code && deskUnlocked && codeEntered.length === 4) {
         clearInterval(timerInterval);
         timerRunning = false;
         gameContent.innerHTML = `
