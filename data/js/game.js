@@ -50,5 +50,15 @@ function pickLock() {
 function tryCode() {
     gameContent.innerHTML = `
         <p>You can try a code.</p>
+        <button class="button" onclick="key1()">1</button>
+        <button class="button" onclick="key2()">2</button>
+        <button class="button" onclick="key3()">3</button>
+        <button class="button" onclick="key4()">4</button>
+        <button class="button" onclick="key5()">5</button>
+        <button class="button" onclick="key6()">6</button>
+        <button class="button" onclick="key7()">7</button>
+        <button class="button" onclick="key8()">8</button>
+        <button class="button" onclick="key9()">9</button>
+        <button class="button" onclick="key0()">0</button>
     `;
 }
