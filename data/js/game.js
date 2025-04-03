@@ -42,7 +42,7 @@ function inspectPin() {
 function pickLock() {
     gameContent.innerHTML = `
         <p>You successfully picked the lock.</p>
-        <button class="button" onclick="startGame()>Ok</button>
+        <button class="button" onclick="startGame()">Ok</button>
     `;
     deskUnlocked = true;
 }
