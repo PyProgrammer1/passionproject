@@ -114,6 +114,8 @@ function key0() {
 }
 function checkCode() {
     if (codeEntered === code) {
+        clearInterval(timerInterval);
+        timerRunning = false;
         gameContent.innerHTML = `
             <p>The door unlocked and you escaped in a time of ${time} seconds.</p>
             <button class="button" onclick="resetGame()">Reset</button>
@@ -131,8 +133,6 @@ function resetGame() {
     deskUnlocked = false;
     startGame();
     startTimer();
-    timerRunning = false;
-    clearInterval(timerInterval);
     time = 0;
 }
 // Start the game when the page loads
