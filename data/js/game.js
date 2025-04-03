@@ -115,7 +115,7 @@ function key0() {
 function checkCode() {
     if (codeEntered === code) {
         gameContent.innerHTML = `
-            <p>The door unlocked and you escaped in a time of ${time}.</p>
+            <p>The door unlocked and you escaped in a time of ${time} seconds.</p>
             <button class="button" onclick="resetGame()">Reset</button>
         `;
     } else {
