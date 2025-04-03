@@ -1,4 +1,23 @@
 const gameContent = document.getElementById('game-content');
+
+// Game state variables
+var time = 0; // Time in seconds
+var timer = null; // Timer variable
+var timerRunning = false; // Flag to check if the timer is running
+var timerInterval = null; // Timer interval variable
+var timerDisplay = document.getElementById('timer-display'); // Timer display element
+// Start the timer
+function startTimer() {
+    if (!timerRunning) {
+        timerRunning = true;
+        timerInterval = setInterval(() => {
+            time++;
+            timerDisplay.innerText = `Time: ${time} seconds`;
+        }, 1000);
+    }
+}
+var code = "4470";
+var codeEntered = "";
 var deskUnlocked = false;
 function startGame() {
     gameContent.innerHTML = `
@@ -62,3 +81,61 @@ function tryCode() {
         <button class="button" onclick="key0()">0</button>
     `;
 }
+
+function key1() {
+    codeEntered += "1";
+}
+function key2() {
+    codeEntered += "2";
+}
+function key3() {
+    codeEntered += "3";
+}
+function key4() {
+    codeEntered += "4";
+}
+function key5() {
+    codeEntered += "5";
+}
+function key6() {
+    codeEntered += "6";
+}
+function key7() {
+    codeEntered += "7";
+}
+function key8() {
+    codeEntered += "8";
+}
+function key9() {
+    codeEntered += "9";
+}
+function key0() {
+    codeEntered += "0";
+}
+function checkCode() {
+    if (codeEntered === code) {
+        gameContent.innerHTML = `
+            <p>The door unlocked and you escaped in a time of ${time}.</p>
+            <button class="button" onclick="resetGame()">Reset</button>
+        `;
+    } else {
+        gameContent.innerHTML = `
+            <p>Incorrect code. Try again.</p>
+            <button class="button" onclick="tryCode()">Try Again</button>
+        `;
+        codeEntered = "";
+    }
+}
+function resetGame() {
+    codeEntered = "";
+    deskUnlocked = false;
+    startGame();
+    startTimer();
+    timerRunning = false;
+    clearInterval(timerInterval);
+    time = 0;
+}
+// Start the game when the page loads
+document.addEventListener('DOMContentLoaded', (event) => {
+    resetGame();
+});
