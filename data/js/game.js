@@ -33,7 +33,7 @@ function inspectKeypad() {
 
 function inspectPin() {
     gameContent.innerHTML = `
-        <p>The bobby pin looks ike it could pick the lock. Do you want to use it?
+        <p>The bobby pin looks ike it could pick the lock. Do you want to use it?</p>
         <button class="button" onclick="pickLock()">Yes</button>
         <button class="button" onclick="startGame()">No</button>
     `;
