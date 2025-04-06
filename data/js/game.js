@@ -132,7 +132,7 @@ function checkCode() {
             <p>The door unlocked and you escaped in a time of ${time} seconds.</p>
             <button class="button" onclick="resetGame()">Reset</button>
         `;
-    } else if (codeEntered.length === 4) {
+    } else if (codeEntered !== code && codeEntered.length === 4) {
         gameContent.innerHTML = `
             <p>Incorrect code. Try again.</p>
             <button class="button" onclick="tryCode()">Try Again</button>
