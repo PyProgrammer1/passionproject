@@ -79,6 +79,8 @@ function tryCode() {
         <button class="button" onclick="key8()">8</button>
         <button class="button" onclick="key9()">9</button>
         <button class="button" onclick="key0()">0</button>
+        <button class="button" onclick="startGame()">Go Back</button>
+        <p>Code entered: ${codeEntered}</p>
     `;
 }
 
@@ -123,14 +125,14 @@ function key0() {
     checkCode();
 }
 function checkCode() {
-    if (codeEntered === code && deskUnlocked && codeEntered.length === 4) {
+    if (codeEntered === code && codeEntered.length === 4) {
         clearInterval(timerInterval);
         timerRunning = false;
         gameContent.innerHTML = `
             <p>The door unlocked and you escaped in a time of ${time} seconds.</p>
             <button class="button" onclick="resetGame()">Reset</button>
         `;
-    } else {
+    } else if (codeEntered.length === 4) {
         gameContent.innerHTML = `
             <p>Incorrect code. Try again.</p>
             <button class="button" onclick="tryCode()">Try Again</button>
