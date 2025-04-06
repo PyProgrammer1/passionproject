@@ -125,19 +125,21 @@ function key0() {
     checkCode();
 }
 function checkCode() {
-    if (codeEntered === code && codeEntered.length === 4) {
-        clearInterval(timerInterval);
-        timerRunning = false;
-        gameContent.innerHTML = `
-            <p>The door unlocked and you escaped in a time of ${time} seconds.</p>
-            <button class="button" onclick="resetGame()">Reset</button>
-        `;
-    } else if (codeEntered !== code && codeEntered.length === 4) {
-        gameContent.innerHTML = `
-            <p>Incorrect code. Try again.</p>
-            <button class="button" onclick="tryCode()">Try Again</button>
-        `;
-        codeEntered = "";
+    if (codeEntered.length === 4) {
+        if (codeEntered === code) {
+            clearInterval(timerInterval);
+            timerRunning = false;
+            gameContent.innerHTML = `
+                <p>The door unlocked and you escaped in a time of ${time} seconds.</p>
+                <button class="button" onclick="resetGame()">Reset</button>
+            `;
+        } else {
+            gameContent.innerHTML = `
+                <p>Incorrect code. Try again.</p>
+                <button class="button" onclick="tryCode()">Try Again</button>
+            `;
+            codeEntered = "";
+        }
     }
 }
 function resetGame() {
