@@ -16,7 +16,7 @@ function startTimer() {
         }, 1000);
     }
 }
-var code = "4470";
+var code = "4321";
 var codeEntered = "";
 var deskUnlocked = false;
 function startGame() {
@@ -31,7 +31,7 @@ function startGame() {
 function inspectDesk() {
     if (deskUnlocked) {
         gameContent.innerHTML = `
-            <p>You open the desk drawer. It has a note in it that says "30 37 34 34".</p>
+            <p>You open the desk drawer. It has a note in it that says "1234".</p>
             <button class="button" onclick="startGame()">Ok</button>
         `;
     } else {
@@ -69,6 +69,7 @@ function pickLock() {
 function tryCode() {
     gameContent.innerHTML = `
         <p>You can try a code.</p>
+        <p><strong><em>Hint: Reverse.</em></strong></p>
         <button class="button" onclick="key1()">1</button>
         <button class="button" onclick="key2()">2</button>
         <button class="button" onclick="key3()">3</button>
